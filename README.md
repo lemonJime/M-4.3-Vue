@@ -1,54 +1,21 @@
-# Lab-4.2-Vue
+# 🍽️ Meal Planner App
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación web de planificación semanal de comidas desarrollada con Vue 3, TypeScript, Pinia y Tailwind CSS.
 
-## Recommended IDE Setup
+## 📸 Capturas
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Vista principal - Plan semanal
+![Vista principal](./screenshots/main.png)
 
-## Recommended Browser Setup
+### Vista de favoritos
+![Favoritos](./screenshots/favorites.png)
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## ✅ Funcionalidades implementadas
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- **Formulario de comidas**: Añade platos indicando nombre, día de la semana y tipo de comida (desayuno, comida, cena)
+- **Plan semanal**: Visualización de las 7 días de la semana con sus comidas organizadas por tipo
+- **Gestión de favoritos**: Marca/desmarca platos favoritos con visualización dedicada
+- **Eliminación de platos**: Cada plato tiene su botón de eliminar
+- **Persistencia de datos**: El plan semanal se mantiene al recargar la página (pinia-plugin-persistedstate)
+- **Navegación**: Vue Router con dos vistas principales (Plan semanal y Favoritos)
+- **Diseño responsive**: Adaptado a móviles y escritorio con Tailwind CSS

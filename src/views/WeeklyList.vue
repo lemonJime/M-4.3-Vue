@@ -7,9 +7,9 @@ import MealForm from '@/components/MealForm.vue'
 
 const mealStore = useMealStore()
 
-onMounted(async () => {
-    await mealStore.fetchMeals()
-})
+// onMounted(async () => {
+//     await mealStore.fetchMeals()
+// })
 
 const daysOfWeek: DayOfWeek[] = [
     'Monday',
@@ -24,6 +24,10 @@ const daysOfWeek: DayOfWeek[] = [
 
 const handleDeleteMeal = (mealId: string) => {
     mealStore.deleteMeal(mealId)
+}
+
+const handleToggleFavorite = (mealId: string) => {
+    mealStore.toggleFavorite(mealId)
 }
 </script>
 
@@ -57,7 +61,8 @@ const handleDeleteMeal = (mealId: string) => {
             <div
                 class="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-4 snap-x snap-mandatory custom-scrollbar">
                 <DayCard v-for="(day, index) in daysOfWeek" :key="day" :day="day" :index="index"
-                    :meals="mealStore.getMealsByDay(day)" @delete="handleDeleteMeal" />
+                    :meals="mealStore.getMealsByDay(day)" @delete="handleDeleteMeal"
+                    @toggle-favorite="handleToggleFavorite" />
             </div>
         </div>
     </main>

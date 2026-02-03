@@ -12,6 +12,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   delete: [mealId: string]
+  toggleFavorite: [mealId: string]
 }>()
 
 const mealsGroupedByType = computed(() => {
@@ -71,7 +72,7 @@ const mealTypesOrdered: MealType[] = ['Breakfast', 'Lunch', 'Dinner']
 
         <div v-if="mealsGroupedByType[type]?.length > 0" class="space-y-2">
           <MealItem v-for="meal in mealsGroupedByType[type]" :key="meal.id" :meal="meal" :border-color="dishBorderColor"
-            @delete="emit('delete', $event)" />
+            @delete="emit('delete', $event)" @toggle-favorite="emit('toggleFavorite', $event)" />
         </div>
 
         <div v-else class="border-2 border-dashed border-charcoal/10 p-4 rounded-lg flex items-center justify-center">

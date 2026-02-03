@@ -12,6 +12,10 @@ const favoriteMeals = computed(() => {
 const handleDeleteMeal = (mealId: string) => {
     mealStore.deleteMeal(mealId)
 }
+
+const handleToggleFavorite = (mealId: string) => {
+    mealStore.toggleFavorite(mealId)
+}
 </script>
 
 <template>
@@ -33,7 +37,7 @@ const handleDeleteMeal = (mealId: string) => {
 
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <MealItem v-for="meal in favoriteMeals" :key="meal.id" :meal="meal" border-color="border-primary/20"
-                    @delete="handleDeleteMeal" />
+                    @delete="handleDeleteMeal" @toggle-favorite="handleToggleFavorite" />
             </div>
         </div>
     </main>
